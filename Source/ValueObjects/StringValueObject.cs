@@ -10,8 +10,15 @@ public abstract class StringValueObject<T> : ValueObject<T>
     private readonly string _value;
 
     protected StringValueObject(
+        string? value) : this(
+            value,
+            _ => { })
+    {
+    }
+
+    protected StringValueObject(
         string? value,
-        int maxLength = int.MaxValue) : this(
+        int maxLength) : this(
             value,
             (string? v) => GuardFunctions.ThrowIfLength(v, maxLength))
     {
