@@ -43,7 +43,7 @@ public abstract class StringValueObject<T> : ValueObject<T>
         return _value?.GetHashCode() ?? 0;
     }
 
-    protected sealed override bool EqualsCore(T other)
+    protected override bool EqualsCore(T other)
     {
         return _value == other._value;
     }
